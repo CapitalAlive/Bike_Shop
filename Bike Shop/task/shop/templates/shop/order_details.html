@@ -1,0 +1,7 @@
+{%if order%}
+    <h2>Thanks for your order!</h2>
+    <p>Your order number is {{order.pk}}. We will call you once your bike is ready!</p>
+
+{%else%}
+    <p><b>Unfortunately, this order is currently not available.</b></p>
+{%endif%}

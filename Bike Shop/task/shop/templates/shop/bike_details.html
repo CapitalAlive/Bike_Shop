@@ -1,0 +1,25 @@
+{%if bike%}
+    <h2>{{bike}}</h2>
+    <p>Choose one of out bikes:</p>
+        <p>frame: {{bike.frame}}</p>
+        <p>seat: {{bike.seat}}</p>
+        <p>tires: {{bike.tire}}</p>
+        {% if bike.has_basket%}
+        <p>basket: yes</p>
+        {%else%}
+        <p>basket: no</p>
+        {%endif%}
+        <p>description: {{bike.description}}</p>
+    {%if is_available%}
+        <form method="post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button>
+                Order
+            </button>
+        </form>
+{%endif%}
+
+{%else%}
+    <p><b>Unfortunately, this bike is currently not available.</b></p>
+{%endif%}

@@ -1,0 +1,10 @@
+<h1>Welcome to the Bike shop</h1>
+
+<p>Choose one of out bikes:</p>
+
+
+{%for bike in bikes%}
+    <ul>
+        <p><a href="{% url 'bike_details_url' bike.pk%}">{{bike}}</a></p>
+    </ul>
+{%endfor%}
